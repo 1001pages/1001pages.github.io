@@ -9,52 +9,44 @@
     <title>Taotao, happy birthday to you</title>
 	<style type="text/css">
 		#cake{
-			 -moz-transition: all 1.5s linear;
+			-moz-transition: all 1.5s linear;
 		    -webkit-transition: all 1.5s linear;
 		    transition: all 3.5s linear;
 		}
 		#zhuyu{
 			position:absolute;top:25%;
 			left:20px;
-			
 			color: rgb(139, 0, 255);
-			font-size: 22px;
-
-			
-		}
-    
-    #zhuyu1{
-    color: #DAA520;
-      opacity: 0;
-      -moz-transition: all 1.5s linear 3.5s;
-        -webkit-transition: all 1.5s linear 3.5s;
-        transition: all 1.5s linear 3.5s;
-    }
-    
-     #zhuyu2{
-     padding-left:6px;
-      opacity: 0;
-      -moz-transition: all 1.5s linear 4.5s;
-        -webkit-transition: all 1.5s linear 4.5s;
-        transition: all 1.5s linear 4.5s;
-    }
-    
-     #zhuyu3{
-     padding-left:6px;
-      opacity: 0;
-      -moz-transition: all 1.5s linear 5.5s;
-        -webkit-transition: all 1.5s linear 5.5s;
-        transition: all 1.5s linear 5.5s;
-    }
-    
-     #zhuyu4{
-     padding-left:6px;
-      opacity: 0;
-      -moz-transition: all 1.5s linear 6.5s;
-        -webkit-transition: all 1.5s linear 6.5s;
-        transition: all 1.5s linear 6.5s;
-    }
-
+			font-size: 22px;	
+		}    
+        #zhuyu1{
+          color: #DAA520;
+          opacity: 0;
+          -moz-transition: all 1.5s linear 3.5s;
+          -webkit-transition: all 1.5s linear 3.5s;
+          transition: all 1.5s linear 3.5s;
+        }        
+         #zhuyu2{
+          padding-left:6px;
+          opacity: 0;
+          -moz-transition: all 1.5s linear 4.5s;
+          -webkit-transition: all 1.5s linear 4.5s;
+          transition: all 1.5s linear 4.5s;
+        }        
+         #zhuyu3{
+         padding-left:6px;
+          opacity: 0;
+          -moz-transition: all 1.5s linear 5.5s;
+          -webkit-transition: all 1.5s linear 5.5s;
+          transition: all 1.5s linear 5.5s;
+        }    
+         #zhuyu4{
+           padding-left:6px;
+           opacity: 0;
+           -moz-transition: all 1.5s linear 6.5s;
+           -webkit-transition: all 1.5s linear 6.5s;
+           transition: all 1.5s linear 6.5s;
+        }
 		#zhuyu div{
 			margin-top:8px;
 		}
@@ -76,7 +68,6 @@
       	  startPlay = true;
         },4000);
       },500);
-      
     }
     
     function toggleMsc(){
@@ -88,35 +79,16 @@
     	      }
     	      playMsc = !playMsc;
     	}
-      
-    }
-    function typer(){
-    	var $ele = document.getElementById('zhuyu'), str = $ele.innerHTML, progress = 0;
-    			$ele.innerHTML='';
-    			var timer = setInterval(function() {
-    				var current = str.substr(progress, 1);
-    				if (current == '<') {
-    					progress = str.indexOf('>', progress) + 1;
-    				} else {
-    					progress++;
-    				}
-    				$ele.innerHTML = (str.substring(0, progress) + (progress & 1 ? '' : ''));
-    				if (progress >= str.length) {
-    					clearInterval(timer);
-    				}
-    			}, 199);
     }
   </script>
 </head>
 <body style="margin:0;padding:0;background-color: rgb(254, 250, 223);" onclick="toggleMsc();">
 	<audio id="music" src="music/birthdaybz.mp3" preload ></audio>
-
 	<div class="page-content" style="position:relative;margin:0 auto">
 		<img src="img/0.jpg" style="width:100%;height:100%">
 		<div id="gift" style="position:absolute;left:70%; top:30%;width:25%;height:15%;z-index:1"> 
 	       <a onclick="javascript:change();"> <img src="img/m.gif" style="width:100%;height:100%"></a>
 	    </div>
-
 		<div id="zhuyu" >
 			<div id="zhuyu1">涛涛</div>
 			<div id="zhuyu2">祝你生日快乐</div>
@@ -126,7 +98,6 @@
 		<div id='cake' style="opacity:0;position: absolute; left: 21%; top: 55%; width: 60%; height: 35%; z-index: 1;">
 			<img class="cake" src="img/0.gif" style="width:100%;height:100%">
 		</div>
-	</div>
-	
+	</div>	
 </body>
 </html>
