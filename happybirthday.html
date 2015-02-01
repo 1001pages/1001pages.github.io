@@ -72,11 +72,11 @@
       var music = document.getElementById('music');
       setTimeout(function(){
         music.play(); 
-        
+        setTimeout(function(){
+      	  startPlay = true;
+        },4000);
       },500);
-      setTimeout(function(){
-    	  startPlay = true;
-      },4000);
+      
     }
     
     function toggleMsc(){
