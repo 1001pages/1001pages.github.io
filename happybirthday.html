@@ -20,11 +20,36 @@
 			color: rgb(139, 0, 255);
 			font-size: 22px;
 
-			opacity: 0;
-			-moz-transition: all 0.5s linear 3.5s;
-		    -webkit-transition: all 0.5s linear 3.5s;
-		    transition: all 0.5s linear 3.5s;
+			
 		}
+    
+    #zhuyu1{
+      opacity: 0;
+      -moz-transition: all 1.5s linear 3.5s;
+        -webkit-transition: all 1.5s linear 3.5s;
+        transition: all 1.5s linear 3.5s;
+    }
+    
+     #zhuyu2{
+      opacity: 0;
+      -moz-transition: all 1.5s linear 4.5s;
+        -webkit-transition: all 1.5s linear 4.5s;
+        transition: all 1.5s linear 4.5s;
+    }
+    
+     #zhuyu3{
+      opacity: 0;
+      -moz-transition: all 1.5s linear 5.5s;
+        -webkit-transition: all 1.5s linear 5.5s;
+        transition: all 1.5s linear 5.5s;
+    }
+    
+     #zhuyu4{
+      opacity: 0;
+      -moz-transition: all 1.5s linear 6.5s;
+        -webkit-transition: all 1.5s linear 6.5s;
+        transition: all 1.5s linear 6.5s;
+    }
 
 		#zhuyu div{
 			margin-top:8px;
@@ -36,7 +61,10 @@
     function change(){
       document.getElementById('gift').style.display = 'none';
       document.getElementById('cake').style.opacity = 1;
-      document.getElementById('zhuyu').style.opacity = 1;
+      document.getElementById('zhuyu1').style.opacity = 1;
+      document.getElementById('zhuyu2').style.opacity = 1;
+      document.getElementById('zhuyu3').style.opacity = 1;
+      document.getElementById('zhuyu4').style.opacity = 1;
       var music = document.getElementById('music');
       setTimeout(function(){
         music.play(); 
@@ -58,6 +86,22 @@
     	}
       
     }
+    function typer(){
+    	var $ele = document.getElementById('zhuyu'), str = $ele.innerHTML, progress = 0;
+    			$ele.innerHTML='';
+    			var timer = setInterval(function() {
+    				var current = str.substr(progress, 1);
+    				if (current == '<') {
+    					progress = str.indexOf('>', progress) + 1;
+    				} else {
+    					progress++;
+    				}
+    				$ele.innerHTML = (str.substring(0, progress) + (progress & 1 ? '' : ''));
+    				if (progress >= str.length) {
+    					clearInterval(timer);
+    				}
+    			}, 199);
+    }
   </script>
 </head>
 <body style="margin:0;padding:0" onclick="toggleMsc();">
@@ -70,10 +114,10 @@
 	    </div>
 
 		<div id="zhuyu" >
-			<div class="p1">涛涛</div>
-			<div class="p2">生日快乐</div>
-			<div class="p2">天天开心</div>
-			<div class="p3">~~~^-^~~~</div>
+			<div id="zhuyu1">涛涛</div>
+			<div id="zhuyu2">生日快乐</div>
+			<div id="zhuyu3">天天开心</div>
+			<div id="zhuyu4">~~~^-^~~~</div>
 		</div>
 		<div id='cake' style="opacity:0;position: absolute; left: 21%; top: 55%; width: 60%; height: 35%; z-index: 1;">
 			<img class="cake" src="img/0.gif" style="width:100%;height:100%">
